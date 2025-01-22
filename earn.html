@@ -42,8 +42,8 @@
             </div>
         </div>
         <div>
-            <!-- Updated YouTube link to open in external browser -->
-            <a href="tg://openmessage?url=https://www.youtube.com/channel/UCzwAJ5X5Z1eF2bIt0qkLqKw">
+            <!-- Updated YouTube link -->
+            <a href="https://www.youtube.com/channel/UCzwAJ5X5Z1eF2bIt0qkLqKw" target="_blank" class="external-link">
                 <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M9 5L14.15 10C14.4237 10.2563 14.6419 10.5659 14.791 10.9099C14.9402 11.2539 15.0171 11.625 15.0171 12C15.0171 12.375 14.9402 12.7458 14.791 13.0898C14.6419 13.4339 14.4237 13.7437 14.15 14L9 19" stroke="#ffffff" opacity="0.4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
@@ -68,8 +68,8 @@
             </div>
         </div>
         <div>
-            <!-- Updated custom link to open in external browser -->
-            <a href="tg://openmessage?url=https://poawooptugroo.com/4/8832797">
+            <!-- Updated Custom Link -->
+            <a href="https://poawooptugroo.com/4/8832797" target="_blank" class="external-link">
                 <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M9 5L14.15 10C14.4237 10.2563 14.6419 10.5659 14.791 10.9099C14.9402 11.2539 15.0171 11.625 15.0171 12C15.0171 12.375 14.9402 12.7458 14.791 13.0898C14.6419 13.4339 14.4237 13.7437 14.15 14L9 19" stroke="#ffffff" opacity="0.4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
@@ -78,31 +78,15 @@
     </div>
     <br> <br>
 
-    <div class="boosters-button">
-        <div class="boosters-button-detail">
-            <div class="boosters-button-image">
-                <img src="./assets/images/5.gif" width="45px">
-            </div>
-            <div>
-                <div>
-                    <h4>Follow Us on Instagram</h4>
-                </div>
-                <div class="boosters-button-data">
-                    <img src="./assets/images/apple.svg" width="20px" class="m-r-25">
-                    <h5 class="m-r-25">2500</h5>
-                </div>
-            </div>
-        </div>
-        <div>
-            <!-- Updated Instagram link -->
-            <a href="tg://openmessage?url=https://www.instagram.com/bullabc34/">
-                <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M9 5L14.15 10C14.4237 10.2563 14.6419 10.5659 14.791 10.9099C14.9402 11.2539 15.0171 11.625 15.0171 12C15.0171 12.375 14.9402 12.7458 14.791 13.0898C14.6419 13.4339 14.4237 13.7437 14.15 14L9 19" stroke="#ffffff" opacity="0.4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </a>
-        </div>
-    </div>
-
-    <script src="./assets/js/charge.js"></script>
+    <script>
+        // JavaScript to force external browser
+        document.querySelectorAll('.external-link').forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault(); // Prevent Telegram from handling the link
+                const url = link.getAttribute('href');
+                window.open(url, '_blank'); // Open the link in the default browser
+            });
+        });
+    </script>
 </body>
 </html>
