@@ -1,7 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src='//niphaumeenses.net/vignette.min.js' data-zone='8832853' data-sdk='show_8832853'></script>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <meta name="theme-color" content="#f19e36" />
+    <link rel="icon" type="image/x-icon" href="./assets/favicon/favicon.ico">
+
+    <!-- Monetag Ad Script -->
+    <script>
+        // Function to dynamically load the Monetag ad script
+        function loadMonetagAd() {
+            // Remove the old script if it exists
+            const existingScript = document.querySelector("script[data-zone='8832796']");
+            if (existingScript) {
+                existingScript.remove();
+            }
+
+            // Create a new script tag for Monetag
+            const monetagScript = document.createElement('script');
+            monetagScript.src = '//whephiwums.com/vignette.min.js'; // Your Monetag ad script
+            monetagScript.setAttribute('data-zone', '8832796'); // Zone ID
+            monetagScript.setAttribute('data-sdk', 'show_8832796'); // SDK Attribute
+            monetagScript.async = true;
+
+            // Append the script to the <head> for execution
+            document.head.appendChild(monetagScript);
+        }
+
+        // Reload the Monetag ad script every 10 seconds
+        setInterval(() => {
+            loadMonetagAd();
+            console.log('Monetag ad script reloaded'); // Debug log to check reloading
+        }, 10000); // 10 seconds (10,000 ms)
+    </script>
+</head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ENO</title>
