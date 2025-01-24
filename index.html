@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
-</head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ENO</title>
@@ -13,9 +10,35 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="./assets/favicon/favicon.ico">
 
-</head> 
+    <!-- Monetag Ad Script -->
+    <script>
+        // Function to dynamically load the Monetag ad script
+        function loadMonetagAd() {
+            // Remove existing Monetag ad script if it exists
+            const existingScript = document.querySelector("script[data-zone='8832796']");
+            if (existingScript) {
+                existingScript.remove();
+            }
+
+            // Create a new script tag for Monetag
+            const monetagScript = document.createElement('script');
+            monetagScript.src = '//whephiwums.com/vignette.min.js'; // Monetag script source
+            monetagScript.setAttribute('data-zone', '8832796'); // Monetag Zone ID
+            monetagScript.setAttribute('data-sdk', 'show_8832796'); // SDK Attribute
+            monetagScript.async = true;
+
+            // Append the new script tag to the <head> section
+            document.head.appendChild(monetagScript);
+        }
+
+        // Load the Monetag ad script every 10 seconds
+        setInterval(() => {
+            loadMonetagAd();
+            console.log('Monetag ad script reloaded'); // Debug message for console
+        }, 10000); // Reload every 10 seconds
+    </script>
+</head>
 <body> 
-    
     <div class="squad-container">
         <div class="login">
             <div class="login-detail">
@@ -55,7 +78,6 @@
     </div>
     
     <div class="coin-container">
-     
         <img src="./assets/images/hamster.png" id="coin" class="select-none" width="300px" />
     </div>
 <br><br><br>
@@ -88,7 +110,7 @@
         <div class="progress"></div>
     </div>
 
-
     <script src="./assets/js/main.js"></script>
 </body>
 </html>
+
